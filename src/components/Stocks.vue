@@ -34,7 +34,9 @@
         {{ value.companyName }}
       </option>
     </select>
-    <div class="info">{{ selected }}</div>
+    <div class="info">
+      {{ selected }}
+    </div>
   </section>
 </template>
 
@@ -64,6 +66,11 @@ export default {
       .catch((e) => {
         this.errors.push(e);
       });
+  },
+  watch: {
+    selected() {
+      console.log(this.selected);
+    },
   },
 };
 </script>
