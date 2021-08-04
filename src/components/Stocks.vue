@@ -1,6 +1,13 @@
 <template>
   <section>
-    <div class="stock">
+    <!-- error message -->
+    <div v-if="errors.length > 0" class="error">
+      <p>We have errors: {{ JSON.stringify(errors, null, 2) }}</p>
+    </div>
+
+    <!-- cards -->
+    <h2 v-if="loading">Loading data...</h2>
+    <div v-else class="stock">
       <div class="stock-item" v-for="value in stock" :key="value.stock">
         <div class="stock-item__info">
           <div class="stock-item__cover">
@@ -14,6 +21,8 @@
         <span class="stock-item__price">{{ value.price }} $</span>
       </div>
     </div>
+
+    <!-- info -->
     <h3>Get Info</h3>
     <select v-model="selected">
       <option value disabled>Select Company</option>
@@ -37,6 +46,7 @@ export default {
       stock: [],
       errors: [],
       selected: '',
+      loading: true,
     };
   },
   created() {
@@ -48,6 +58,7 @@ export default {
       .then((responce) => responce.json())
       .then((data) => {
         this.stock = data;
+        this.loading = false;
         // console.log(data)
       })
       .catch((e) => {
@@ -56,3 +67,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.error {
+  color: crimson;
+}
+</style>
