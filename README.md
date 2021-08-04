@@ -1,4 +1,10 @@
-# New Project
+# ПРИЛОЖЕНИЕ на Vue 3 (rebuild with Snowpack)
+
+[Видео](https://www.youtube.com/watch?v=7Qgoki16SRs)
+
+[Оригинальный github repo (Vite)](https://github.com/annblok/Vue-3-API-Stocks)
+
+[API: need registration](https://financialmodelingprep.com/developer/docs)
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
