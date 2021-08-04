@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <section>
     <div class="stock">
       <div class="stock-item" v-for="value in stock" :key="value.stock">
         <div class="stock-item__info">
@@ -21,38 +21,38 @@
         v-for="value in stock"
         :key="value.stock"
         :value="value.description"
-      >{{ value.companyName }}</option>
+      >
+        {{ value.companyName }}
+      </option>
     </select>
     <div class="info">{{ selected }}</div>
-  </div>
+  </section>
 </template>
 
 <script>
 export default {
   name: 'Stocks',
-  data()
-  {
+  data() {
     return {
       stock: [],
       errors: [],
-      selected: ''
-    }
+      selected: '',
+    };
   },
-  created()
-  {
-    fetch(`https://financialmodelingprep.com/api/v3/profile/AAPL,NVDA,TSLA,AMD,INTC,MDB,SPCE,V,DAL,DOCU,OKTA,AMZN,PINS,TRIP,GDDY,DIS,MCD,NOK,UPWK,IBM,FB,ZM,OZON,NFLX,EA,HLT,H,CCL?apikey=${import.meta.env.SNOWPACK_PUBLIC_API_KEY}`)
-      .then(responce => responce.json())
-      .then(
-        data =>
-        {
-          this.stock = data
-          // console.log(data)
-        }
-      )
-      .catch(e =>
-      {
-        this.errors.push(e)
+  created() {
+    fetch(
+      `https://financialmodelingprep.com/api/v3/profile/AAPL,NVDA,TSLA,AMD,INTC,MDB,SPCE,V,DAL,DOCU,OKTA,AMZN,PINS,TRIP,GDDY,DIS,MCD,NOK,UPWK,IBM,FB,ZM,OZON,NFLX,EA,HLT,H,CCL?apikey=${
+        import.meta.env.SNOWPACK_PUBLIC_API_KEY
+      }`
+    )
+      .then((responce) => responce.json())
+      .then((data) => {
+        this.stock = data;
+        // console.log(data)
       })
-  }
-}
+      .catch((e) => {
+        this.errors.push(e);
+      });
+  },
+};
 </script>

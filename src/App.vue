@@ -6,12 +6,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Stocks from './components/Stocks.vue'
+import { defineComponent } from 'vue';
+import Stocks from './components/Stocks.vue';
 export default defineComponent({
   name: 'App',
   components: {
-    Stocks
-  }
-})
+    Stocks,
+  },
+});
 </script>
+
+<style>
+.title {
+  color: tomato;
+}
+</style>
