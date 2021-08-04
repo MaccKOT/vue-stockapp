@@ -1,10 +1,20 @@
-# ПРИЛОЖЕНИЕ на Vue 3 (rebuild with Snowpack)
+# Stock App with Vue 3 (rebuild with Snowpack, fetch instead Axios)
 
-[Видео](https://www.youtube.com/watch?v=7Qgoki16SRs)
+[Tutorial video](https://www.youtube.com/watch?v=7Qgoki16SRs)
 
-[Оригинальный github repo (Vite)](https://github.com/annblok/Vue-3-API-Stocks)
+[Original github repo (created with Vite)](https://github.com/annblok/Vue-3-API-Stocks)
 
 [API: need registration](https://financialmodelingprep.com/developer/docs)
+
+Change your own api key in `.env` (see `.env.example`).
+
+! **TODO**
+
+- Search for specific stock
+- open company info in modal window
+- fix html and css
+
+---
 
 > ✨ Bootstrapped with Create Snowpack App (CSA).
 
